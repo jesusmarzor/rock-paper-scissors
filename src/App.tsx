@@ -1,6 +1,17 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Home from "./pages/Home"
+import Level from "./pages/Level"
+
 function App() {
   return (
-   <h1 className="text-3xl text-red-900 text-center">Example</h1>
+    <main>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home/>}/>
+          <Route path="/:level" element={<Level/>}/>
+        </Routes>
+      </BrowserRouter>
+    </main>
   )
 }
 
