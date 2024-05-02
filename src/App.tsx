@@ -4,8 +4,8 @@ import Level from "./pages/Level"
 
 function App() {
   return (
-    <main className="font-barlowSemiCondensed h-screen bg-gradient-to-b from-blue-800 to-blue-900">
-      <div className="max-w-110 mx-auto ">
+    <main className="font-barlowSemiCondensed  h-screen bg-gradient-to-b from-blue-800 to-blue-900">
+      <div className="max-w-110 mx-auto h-full">
         <BrowserRouter>
           <Routes>
             <Route index element={<Home/>}/>
