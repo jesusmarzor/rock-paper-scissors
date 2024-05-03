@@ -12,7 +12,7 @@ const Level = () => {
     return (
         <>
         <header className="flex flex-row p-5 justify-between items-center gap-4 border-2 border-gray rounded-xl m-5">
-            <img src={level == "advanced" ? LogoBonus : Logo} width={120}/>
+            <img className="w-32" src={level == "advanced" ? LogoBonus : Logo}/>
             <section className="flex flex-col justify-center items-center bg-white xs:px-8 px-4 py-2 rounded-xl">
                 <h2 className="font-semibold text-xs text-blue-500 tracking-widest">SCORE</h2>
                 <p className="text-5xl font-bold text-black">2</p>
