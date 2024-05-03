@@ -1,14 +1,13 @@
-import HandType from "@/utils/enums/HandType"
 import PositionElement from "@/utils/enums/PositionElement"
 import { ReactElement } from "react"
 
 interface Props {
 	position: PositionElement
-	type: HandType
+	onclick: () => void
     children: ReactElement
 }
 
-export const CircleHand: React.FC<Props> = ({position, type, children}) => {
+export const CircleHand: React.FC<Props> = ({position, onclick, children}) => {
     let classes = ""
     switch (position) {
         case PositionElement.top:
@@ -37,7 +36,7 @@ export const CircleHand: React.FC<Props> = ({position, type, children}) => {
             break
     }
     return (
-        <button onClick={() => console.log(type)} className={`absolute ${classes} transition-transform flex justify-center items-center w-[45%] aspect-square border-[0.8rem] xs:border-[1.3rem] shadow-[inset_0_5px_0px_0px_rgba(0,0,0,0.2)] rounded-full bg-white`}>
+        <button onClick={onclick} className={`absolute ${classes} transition-transform flex justify-center items-center w-[45%] aspect-square border-[0.8rem] xs:border-[1.3rem] shadow-[inset_0_5px_0px_0px_rgba(0,0,0,0.2)] rounded-full bg-white`}>
             {children}
         </button>
     )

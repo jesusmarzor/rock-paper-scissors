@@ -5,10 +5,16 @@ import BgTriangle from "@/assets/svgs/bg-triangle.svg";
 import BgPentagon from "@/assets/svgs/bg-pentagon.svg";
 import { originalHands, advancedHands } from "@/utils/Constants";
 import { CircleHand } from "@/components/CircleHand";
+import HandType from "@/utils/enums/HandType";
 
 const Level = () => {
     const { level } = useParams()
     const hands = level == "advanced" ? advancedHands : originalHands
+
+    const didTapHand = (type: HandType) => {
+        console.log(type)
+    }
+
     return (
         <>
         <header className="flex flex-row p-5 justify-between items-center gap-4 border-2 border-gray rounded-xl m-5">
@@ -23,7 +29,7 @@ const Level = () => {
             {
                 hands.map( ({type, icon, position}) => {
                     return (
-                        <CircleHand key={`${level}-${type}`} type={type} position={position}>
+                        <CircleHand key={`${level}-${type}`} onclick={() => didTapHand(type)} position={position}>
                             <img className="w-[40%]" src={icon}/>
                         </CircleHand>
                     )
