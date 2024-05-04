@@ -86,7 +86,7 @@ const Level = () => {
                     })
                 }
             </div>
-            <div className={`flex flex-col sm:flex-row justify-center items-center w-full my-24 gap-8 ${handSelected == null ? "opacity-0 h-0 m-0 pointer-events-none" : "opacity-100 pointer-events-auto h-auto transition-opacity ease-in duration-150"}`}>
+            <div className={`flex flex-col sm:flex-row justify-center items-center w-full my-4 sm:my-24 gap-8 ${handSelected == null ? "opacity-0 h-0 m-0 pointer-events-none" : "opacity-100 pointer-events-auto h-auto transition-opacity ease-in duration-150"}`}>
                 <div className="flex flex-col justify-center items-center w-44 sm:w-1/3 gap-4">
                     <p className="text-white font-bold text-xl tracking-wider uppercase">You picked</p>
                     <CircleHand classes={`${handSelected?.color} w-full border-[1.3rem]`}>
