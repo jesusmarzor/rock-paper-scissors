@@ -4,5 +4,6 @@ import type PositionElement from "@/utils/enums/PositionElement"
 export type Hand = {
     type: HandType,
     icon: string,
-    position: PositionElement
+    position: PositionElement,
+    color: string
 }

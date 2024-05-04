@@ -11,17 +11,20 @@ export const originalHands: Array<Hand> = [
     {
         type: HandType.paper,
         icon: IconPaper,
-        position: PositionElement.topLeft
+        position: PositionElement.topLeft,
+        color: "border-hand-first"
     },
     {
         type: HandType.scissor,
         icon: IconScissors,
-        position: PositionElement.topRight
+        position: PositionElement.topRight,
+        color: "border-hand-second"
     },
     {
         type: HandType.rock,
         icon: IconRock,
-        position: PositionElement.bottom
+        position: PositionElement.bottom,
+        color: "border-hand-third"
     }
 ]
 
@@ -29,26 +32,31 @@ export const advancedHands: Array<Hand> = [
     {
         type: HandType.paper,
         icon: IconPaper,
-        position: PositionElement.top
+        position: PositionElement.top,
+        color: "border-hand-first"
     },
     {
         type: HandType.scissor,
         icon: IconScissors,
-        position: PositionElement.middleRight
+        position: PositionElement.middleRight,
+        color: "border-hand-second"
     },
     {
         type: HandType.rock,
         icon: IconRock,
-        position: PositionElement.bottomRight
+        position: PositionElement.bottomRight,
+        color: "border-hand-third"
     },
     {
         type: HandType.lizard,
         icon: IconLizard,
-        position: PositionElement.bottomLeft
+        position: PositionElement.bottomLeft,
+        color: "border-hand-fourth"
     },
     {
         type: HandType.spock,
         icon: IconSpock,
-        position: PositionElement.middleLeft
+        position: PositionElement.middleLeft,
+        color: "border-hand-fifth"
     }
 ]
