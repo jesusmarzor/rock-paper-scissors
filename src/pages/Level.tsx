@@ -9,16 +9,21 @@ import { CircleHand } from "@/components/CircleHand";
 import { getRandomInt, checkUserGameResult } from "@/utils/Functions";
 import { Hand } from "@/utils/types/Hand";
 import { useEffect, useRef, useState } from "react";
+import RulesOriginal from "@/assets/svgs/image-rules.svg";
+import RulesBonus from "@/assets/svgs/image-rules-bonus.svg";
+import CloseIcon from "@/assets/svgs/icon-close.svg"
 
 const Level = () => {
     const { level } = useParams()
     const [score, setScore] = useState<number>(0)
     const hands = level == "advanced" ? advancedHands : originalHands
+    const rules = level == "advanced" ? RulesBonus : RulesOriginal
     const [handSelected, setHandSelected] = useState<Hand | null>()
     const [cpuHandSelected, setCpuHandSelected] = useState<Hand | null>()
     const [resultMessage, setResultMessage] = useState<string | null>()
     const [counter, setCounter] = useState<number>(0)
     const interval = useRef<NodeJS.Timeout>();
+    const [isOpenedRules, setIsOpenedRules] = useState<boolean>(false)
 
     useEffect(() => {
         const handleTimer = () => {
@@ -105,6 +110,20 @@ const Level = () => {
                             : <img className="w-[40%]" src={cpuHandSelected?.icon}/>
                         }
                     </CircleHand>
+                </div>
+            </div>
+            <button onClick={() => setIsOpenedRules(true)} className={`my-24 ml-auto mr-8 rounded-xl flex justify-center items-center before:ease relative w-44 overflow-hidden border border-hand-first text-hand-first shadow-2xl before:absolute before:top-1/2 before:h-0 before:w-72 before:origin-center before:-translate-x-20 before:rotate-45 before:bg-hand-first before:duration-300 hover:text-white hover:shadow-hand-first hover:before:h-80 hover:before:-translate-y-32 ${handSelected != null ? "opacity-0 h-0 m-0 pointer-events-none" : "opacity-100 pointer-events-auto h-16 transition-opacity ease-in duration-150"}`}>
+                <span className="relative z-10 font-semibold">Rules</span>
+            </button>
+            <div className={`z-10 fixed top-0 bottom-0 right-0 left-0 flex justify-center items-center bg-[#000]/40 ${isOpenedRules ? "opacity-100 pointer-events-auto h-auto transition-opacity ease-in duration-150" : "opacity-0 h-0 m-0 pointer-events-none"}`}>
+                <div className="flex flex-col justify-center items-center gap-4 p-6 bg-white rounded-xl m-4">
+                    <header className="flex justify-between items-center w-full">
+                        <p className="uppercase text-blue-900 tracking-wider font-semibold">Rules</p>
+                        <button onClick={() => setIsOpenedRules(false)}>
+                            <img src={CloseIcon} width={15}/>
+                        </button>
+                    </header>
+                    <img className="w-full" src={rules}/>
                 </div>
             </div>
         </>
