@@ -116,7 +116,7 @@ const Level = () => {
                 <span className="relative z-10 font-semibold">Rules</span>
             </button>
             <div className={`z-10 fixed top-0 bottom-0 right-0 left-0 flex justify-center items-center bg-[#000]/40 ${isOpenedRules ? "opacity-100 pointer-events-auto h-auto transition-opacity ease-in duration-150" : "opacity-0 h-0 m-0 pointer-events-none"}`}>
-                <div className="flex flex-col justify-center items-center gap-4 p-6 bg-white rounded-xl m-4">
+                <div className="flex flex-col justify-center items-center gap-4 p-6 bg-white rounded-xl m-8">
                     <header className="flex justify-between items-center w-full">
                         <p className="uppercase text-blue-900 tracking-wider font-semibold">Rules</p>
                         <button onClick={() => setIsOpenedRules(false)}>
